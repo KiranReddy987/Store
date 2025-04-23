@@ -6,7 +6,6 @@ import { Navbar } from '@/components/navbar';
 import { CategoryNav } from '@/components/category-nav';
 import Footer from '@/components/ui/Footer';
 
-
 interface Product {
   id: number;
   name: string;
@@ -125,10 +124,7 @@ const App = ({ cart, setCart, selectedCategory, setselectedCategory,user,setUser
 
         {/* Product Grid */}
         <div className="w-3/4 ml-8 overflow-y-auto" style={{ maxHeight: '90vh' }}>
-        {selectedSubCategory === "All" ? <h1 className="text-3xl font-bold mb-6">{selectedCategory}</h1> : 
-            <h1 className="text-3xl font-bold mb-6">{selectedSubCategory}</h1>
-        }
-          
+          <h1 className="text-3xl font-bold mb-6">{selectedCategory}</h1>
           <div className="grid grid-cols-3 gap-8">
             {filteredProducts.map(product => {
               const inCart = cart.find(item => item.id === product.id);

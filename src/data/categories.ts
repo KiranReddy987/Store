@@ -86,18 +86,18 @@ export const categories = [
       { id: 125, name: "Truly", price: 699, addedtoCart: false, image: "/images/smirnoff/Truly.jpg", subcategory: "Hard Seltzers", category: 3 },
       { id: 126, name: "High Noon", price: 699, addedtoCart: false, image: "/smirnoff/High Noon.jpg", subcategory: "Hard Seltzers", category: 3 },
       { id: 127, name: "Bud Light Seltzer", price: 699, addedtoCart: false, image: "public/images/smirnoff/bud light.png", subcategory: "Hard Seltzers", category: 3 },
-        { id: 95, name: "Chips", price: 249, addedtoCart: false, image: "", subcategory: "Snacks & Candy", category: 4 },
-        { id: 96, name: "Chocolate Bars", price: 149, addedtoCart: false, image: "", subcategory: "Snacks & Candy", category: 4 },
-        { id: 97, name: "Candy", price: 129, addedtoCart: false, image: "", subcategory: "Snacks & Candy", category: 4 },
-        { id: 98, name: "Gum", price: 99, addedtoCart: false, image: "", subcategory: "Snacks & Candy", category: 4 },
-        { id: 99, name: "Mints", price: 89, addedtoCart: false, image: "", subcategory: "Snacks & Candy", category: 4 },
+        { id: 95, name: "Chips", price: 249, addedtoCart: false, image: "/images/CHIPS .png", subcategory: "Snacks & Candy", category: 4 },
+        { id: 96, name: "Chocolate Bars", price: 149, addedtoCart: false, image: "/images/choc bars .png", subcategory: "Snacks & Candy", category: 4 },
+        { id: 97, name: "Candy", price: 129, addedtoCart: false, image: "/images/candy .png", subcategory: "Snacks & Candy", category: 4 },
+        { id: 98, name: "Gum", price: 99, addedtoCart: false, image: "/images/GUMS .png", subcategory: "Snacks & Candy", category: 4 },
+        { id: 99, name: "Mints", price: 89, addedtoCart: false, image: "/images/mint .png", subcategory: "Snacks & Candy", category: 4 },
       
         // Beverages
         { id: 100, name: "Sodas", price: 199, addedtoCart: false, image: "/images/soda.png", subcategory: "Beverages", category: 4 },
         { id: 101, name: "Juices", price: 249, addedtoCart: false, image: "/images/juice.png", subcategory: "Beverages", category: 4 },
         { id: 102, name: "Energy Drinks", price: 299, addedtoCart: false, image: "/images/energy drink .png", subcategory: "Beverages", category: 4 },
-        { id: 103, name: "Iced Tea", price: 199, addedtoCart: false, image: "", subcategory: "Beverages", category: 4 },
-        { id: 104, name: "Bottled Water", price: 99, addedtoCart: false, image: "", subcategory: "Beverages", category: 4 },
+        { id: 103, name: "Iced Tea", price: 199, addedtoCart: false, image: "/images/iced tea .png", subcategory: "Beverages", category: 4 },
+        { id: 104, name: "Bottled Water", price: 99, addedtoCart: false, image: "/images/water1.png", subcategory: "Beverages", category: 4 },
         { id: 105, name: "Coffee & Espresso Drinks", price: 349, addedtoCart: false, image: "/images/coffee.png", subcategory: "Beverages", category: 4 },
       
         // Frozen Foods

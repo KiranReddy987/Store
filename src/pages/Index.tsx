@@ -33,38 +33,44 @@ const Index = ({
   const bannerCategories = [
     {
       title: "Breakfast",
-      image: "/images/38ea67c8-143e-48f7-8343-b7276289a322.png",
+      image:
+        "https://images.unsplash.com/photo-1589927986089-35812389fc2b?w=800",
     },
     {
       title: "Muffins",
-      image: "/images/3efc5f5e-f131-4c7d-9926-466e7ab94133.png",
+      image:
+        "https://images.unsplash.com/photo-1600077091911-2d3cfa3f5409?w=800",
     },
     {
       title: "Quesadillas",
-      image: "/images/Screenshot 2025-04-23 at 18.26.06.png",
+      image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800",
     },
     {
       title: "Wine Coolers",
-      image: "public/images/893ed2d0-8e18-4df1-bdfd-7eb0f0c89eb9.png",
+      image:
+        "https://images.unsplash.com/photo-1612437602423-7c131403d6fd?w=800",
     },
     {
       title: "Snacks & Candy",
-      image: "/images/6d0b1f05-4363-4df9-87df-db12288c21c6.png",
+      image:
+        "https://images.unsplash.com/photo-1589927986089-35812389fc2b?w=800",
     },
     {
       title: "Frozen Foods",
-      image: "/images/93e601e4-d6aa-428e-89b3-e58f4a68d0b6.png",
+      image:
+        "https://images.unsplash.com/photo-1609943242441-d274af9c83e8?w=800",
     },
     {
       title: "Grocery Essentials",
-      image: "/images/grocery.png",
+      image:
+        "https://images.unsplash.com/photo-1615484477263-5e9153c69bfc?w=800",
     },
     {
       title: "Pet Care",
-      image: "/images/ba55a643-d286-4fb5-b926-caeb537b9759.png",
+      image:
+        "https://images.unsplash.com/photo-1601758123927-196f3d8d6f50?w=800",
     },
   ];
-  
 
   const addToCart = (product) => {
     const existingItem = cart.find((item) => item.id === product.id);
@@ -107,12 +113,10 @@ const Index = ({
   };
 
   const moveToCategory = (cat) => {
-    window.scrollTo(0, 0);
     navigate(`/classify/${cat}`);
   };
 
   const moveToSubCategory = (subCat) => {
-    window.scrollTo(0, 0);
     navigate(`/${subCat}`);
   };
 
@@ -129,7 +133,7 @@ const Index = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF5E1] text-[#2D2D2D] font-poppins">
+    <div className="min-h-screen bg-gray-50">
       <Navbar
         cart={cart}
         setCart={setCart}
@@ -143,8 +147,13 @@ const Index = ({
         setselectedCategory={setselectedCategory}
       />
 
-      <section className="bg-gradient-to-r from-[#FFF5E1] to-[#FFEDD5] py-10">
-      <motion.div className="max-w-7xl mx-auto px-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+      <div className="w-full bg-gradient-to-r from-orange-100 to-pink-100 py-10 px-6">
+        <motion.main
+          className="mx-auto max-w-7xl px-4 py-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
           <div className="text-center mb-8">
             <h2 className="text-4xl font-semibold text-gray-900" style={{"fontFamily" : "poppins"}}>
               Explore Our Menu
@@ -177,7 +186,7 @@ const Index = ({
                   <div
                     key={index}
                     className="bg-white rounded-xl p-6 hover:bg-green-50 cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    onClick={() => {window.scrollTo(0, 0); navigate(`/${cat.name}`)}}
+                    onClick={() => navigate(`/${cat.name}`)}
                   >
                     <img
                       src={cat.image}
@@ -191,17 +200,17 @@ const Index = ({
                 ))}
             </div>
           </div>
-        </motion.div>
-      </section>
+        </motion.main>
+      </div>
 
-      <section className="w-full bg-gradient-to-r from-[#FFF5E1] to-[#FFEDD5] py-10">
+      <div className="w-full bg-gradient-to-r from-orange-100 to-pink-100 py-10 px-6">
         <motion.main
           className="mx-auto max-w-7xl px-4 mt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="rounded-xl bg-gradient-to-r from-[#2D2D2D] to-[#444444] p-8 text-white shadow-xl relative overflow-hidden">
+          <div className="rounded-xl bg-gradient-to-r from-zinc-900 to-gray-800 p-8 text-white shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-black opacity-50 rounded-xl"></div>
             <div className="relative z-10">
               <h2 className="text-4xl font-bold">
@@ -213,7 +222,7 @@ const Index = ({
               </p>
               <div className="mt-4 flex items-center gap-4">
                 <motion.img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tobacco_leaf_icon.svg/512px-Tobacco_leaf_icon.svg.png"
+                  src="/images/tobacco.png"
                   alt="Tobacco"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -225,23 +234,30 @@ const Index = ({
                   alt="Vape"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.3 }}
-                  className="w-16 h-16 object-contain"
+                  transition={{ duration: 2.0 }}
+                  className="w-18 h-16 object-contain"
                 />
                 <motion.img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cigarette_icon.svg/512px-Cigarette_icon.svg.png"
+                  src="/images/cigs.png"
                   alt="Cigarette"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.6 }}
+                  transition={{ duration: 2.5 }}
                   className="w-16 h-16 object-contain"
                 />
               </div>
-              <button onClick={() => moveToCategory(2)} className="bg-[#FFC145] text-black px-6 py-3 font-bold rounded-lg hover:bg-[#FFB000] transition">Order Now <ChevronRight className="inline ml-1" /></button>
+              <button
+                className="mt-6 flex items-center gap-2 rounded-lg bg-red-400 px-6 py-3 font-bold text-black hover:bg-white-300 transition-all"
+                onClick={() => {
+                  moveToCategory(2);
+                }}
+              >
+                Order Now <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </motion.main>
-      </section>
+      </div>
 
       <div className="w-full py-10 px-6">
         <motion.main
@@ -254,9 +270,9 @@ const Index = ({
             {/* Coffee Banner */}
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1506748686217-9f1e0639cc6f?w=1200"
-                alt="Premium Beverages"
-                className="w-full h-[100px] object-cover"
+                src="/images/31b8dd14-8541-4aa8-a7d1-ec90306c4839.png"
+                alt="Premium Coffees"
+                className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
               <div className="absolute bottom-12 left-8 text-white">
@@ -270,7 +286,7 @@ const Index = ({
                     moveToSubCategory("Beverages");
                   }}
                 >
-                  Discover Bevergaes <ChevronRight className="h-5 w-5" />
+                  Discover Coffees <ChevronRight className="h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -278,7 +294,7 @@ const Index = ({
             {/* Quick Sides Banner */}
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1580999787393-b970b13fe585?w=1200"
+                src="/images/grocery.png"
                 alt="Quick Sides"
                 className="w-full h-[400px] object-cover"
               />
@@ -324,7 +340,6 @@ const Index = ({
               <div
                 key={category.title}
                 className="cursor-pointer flex flex-col items-center rounded-lg transition-shadow duration-300"
-                onClick={() => {{window.scrollTo(0, 0); navigate(`/${category.title}`)}}}
               >
                 <div className="bg-green-200 rounded-full flex justify-center items-center">
                   <img

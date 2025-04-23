@@ -86,7 +86,6 @@ export function Navbar({
 
   const handleHomeClick = () => {
     setselectedCategory(""); // Reset selected category
-    window.scrollTo(0, 0);
     navigate("/"); // Navigate to home
   };
 
@@ -99,7 +98,6 @@ export function Navbar({
 
   const handleProfileClick = () => {
     if (user) {
-      window.scrollTo(0, 0);
       navigate("/profile"); // Navigate to profile if logged in
     } else {
       setIsLoginOpen(true); // Open login modal if not logged in
@@ -166,7 +164,6 @@ export function Navbar({
                           onClick={() => {
                             setSearchText(cat.name);
                             setSuggestions([]);
-                            window.scrollTo(0, 0);
                             navigate(`/search/${encodeURIComponent(cat.name)}`);
                           }}
                         >
