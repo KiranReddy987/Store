@@ -4,13 +4,14 @@ import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/Footer";
 import { motion } from "framer-motion";
+import { ShoppingCart,User,Edit,Heart } from "lucide-react";
+// import { ShoppingCart, Heart, User, Edit } from "react-icons/fa"; // Add Icons for Navigation
 
 const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
-  const [activeSection, setActiveSection] = useState("myOrders"); // Default active section is 'myOrders'
-  const location = useLocation(); // Get the current URL location
-  const navigate = useNavigate(); // Used for navigation
+  const [activeSection, setActiveSection] = useState("myOrders");
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Sections for profile content
   const sections = {
     myOrders: {
       title: "My Orders",
@@ -22,7 +23,7 @@ const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
           name: "Order #1234",
           status: "Delivered",
           date: "2023-11-01",
-          totalAmount: "₹2000",
+          totalAmount: "$2000",
           items: ["Item 1", "Item 2", "Item 3"],
         },
         {
@@ -30,7 +31,7 @@ const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
           name: "Order #1235",
           status: "Pending",
           date: "2023-11-05",
-          totalAmount: "₹1500",
+          totalAmount: "$1500",
           items: ["Item 4", "Item 5"],
         },
       ],
@@ -39,9 +40,9 @@ const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
       title: "Favorites",
       content: "Here are your favorite items.",
       dummyData: [
-        { id: 1, name: "Favorite Item #1", category: "Electronics", price: "₹500" },
-        { id: 2, name: "Favorite Item #2", category: "Clothing", price: "₹1200" },
-        { id: 3, name: "Favorite Item #3", category: "Home Appliances", price: "₹3000" },
+        { id: 1, name: "Favorite Item #1", category: "Electronics", price: "$500" },
+        { id: 2, name: "Favorite Item #2", category: "Clothing", price: "$1200" },
+        { id: 3, name: "Favorite Item #3", category: "Home Appliances", price: "$3000" },
       ],
     },
     profile: {
@@ -58,14 +59,12 @@ const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
     },
   };
 
-  // Handle section click and navigate
   const handleSectionClick = (section) => {
     setActiveSection(section);
     window.scrollTo(0, 0);
     navigate(`/profile?section=${section}`);
   };
 
-  // Extract current section from URL query params
   const currentSection =
     new URLSearchParams(location.search).get("section") || "myOrders";
 
@@ -104,40 +103,48 @@ const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
       />
       <div className="min-h-screen bg-gray-50 flex">
         {/* Sidebar */}
-        <div className="w-64 bg-white shadow-md">
-          <div className="p-6">
+        <div className="w-64 bg-white shadow-md rounded-r-lg p-6">
+          <div className="flex flex-col items-center mb-8">
+            <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="text-lg font-semibold text-gray-800">
               {user?.name || "Kiran Reddy"}
             </div>
-            <div className="text-sm text-gray-500">
-              {user?.phone || "+91 9866191989"}
-            </div>
+            <div className="text-sm text-gray-500">{user?.phone || "+91 9866191989"}</div>
           </div>
           <div className="p-4 border-t border-gray-200">
             <ul>
               <li
-                className={`py-2 px-4 hover:bg-gray-100 cursor-pointer ${
+                className={`py-2 px-4 flex items-center space-x-2 hover:bg-gray-100 cursor-pointer ${
                   currentSection === "myOrders" ? "bg-gray-200" : ""
                 }`}
                 onClick={() => handleSectionClick("myOrders")}
               >
-                My Orders
+                <ShoppingCart />
+                <span>My Orders</span>
               </li>
               <li
-                className={`py-2 px-4 hover:bg-gray-100 cursor-pointer ${
+                className={`py-2 px-4 flex items-center space-x-2 hover:bg-gray-100 cursor-pointer ${
                   currentSection === "favorites" ? "bg-gray-200" : ""
                 }`}
                 onClick={() => handleSectionClick("favorites")}
               >
-                Favorites
+                <Heart />
+                <span>Favorites</span>
               </li>
               <li
-                className={`py-2 px-4 hover:bg-gray-100 cursor-pointer ${
+                className={`py-2 px-4 flex items-center space-x-2 hover:bg-gray-100 cursor-pointer ${
                   currentSection === "profile" ? "bg-gray-200" : ""
                 }`}
                 onClick={() => handleSectionClick("profile")}
               >
-                Profile
+                <User />
+                <span>Profile</span>
               </li>
             </ul>
           </div>

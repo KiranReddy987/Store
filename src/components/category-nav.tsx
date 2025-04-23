@@ -32,32 +32,33 @@ type Props = {
 
 export function CategoryNav({ selectedCategory, setselectedCategory }: Props) {
   return (
-    <div className="border-b bg-white shadow-sm">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ul className="flex flex-nowrap items-center justify-start gap-6 overflow-x-auto py-4 md:justify-center">
-          {categories.map((category) => {
-            const Icon = category.icon;
-            const isActive = selectedCategory === category.name;
+    <div className="border-b bg-[#FFF5E1] shadow-sm">
+  <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <ul className="flex flex-nowrap items-center justify-start gap-6 overflow-x-auto py-4 md:justify-center">
+      {categories.map((category) => {
+        const Icon = category.icon;
+        const isActive = selectedCategory === category.name;
 
-            return (
-              <Link
-                to={`/classify/${category.id}`}
-                key={category.id}
-                onClick={() => setselectedCategory(category.name)}
-                className={cn(
-                  "flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap rounded-full cursor-pointer text-gray-600 hover:text-purple-600 hover:bg-gray-100",
-                  isActive
-                    ? "bg-purple-100 text-purple-700"
-                    : "text-gray-600 hover:text-purple-600 hover:bg-gray-100"
-                )}
-              >
-                <Icon className="h-5 w-5 shrink-0" />
-                <span>{category.name}</span>
-              </Link>
-            );
-          })}
-        </ul>
-      </nav>
-    </div>
+        return (
+          <Link
+            to={`/classify/${category.id}`}
+            key={category.id}
+            onClick={() => setselectedCategory(category.name)}
+            className={cn(
+              "relative flex items-center gap-2 px-3 py-2 text-sm font-medium transition-all duration-200 whitespace-nowrap rounded-full cursor-pointer",
+              isActive
+                ? "bg-[#556B2F] text-white" // active state with light background
+                : "text-[#666666] hover:text-[#2D2D2D] hover:bg-[#FFEDD5]" // default and hover
+            )}
+          >
+            <Icon className="h-5 w-5 shrink-0" />
+            <span>{category.name}</span>
+          </Link>
+        );
+      })}
+    </ul>
+  </nav>
+</div>
+
   );
 }

@@ -14,7 +14,14 @@ interface CartItem {
   quantity: number;
 }
 
-const ProductGrid = ({ cart, setCart, selectedCategory, setselectedCategory,user,setUser}) => {
+const ProductGrid = ({
+  cart,
+  setCart,
+  selectedCategory,
+  setselectedCategory,
+  user,
+  setUser,
+}) => {
   const { category } = useParams();
   const navigate = useNavigate();
 
@@ -45,29 +52,43 @@ const ProductGrid = ({ cart, setCart, selectedCategory, setselectedCategory,user
   };
 
   const decrementQuantity = (id) => {
-    setCart((prev) =>
-      prev
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-        .filter((item) => item.quantity > 0) // Remove item if quantity is 0
+    setCart(
+      (prev) =>
+        prev
+          .map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+          )
+          .filter((item) => item.quantity > 0) // Remove item if quantity is 0
     );
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar cart={cart} setCart={setCart} setselectedCategory={setselectedCategory} showSearchLoginProfile={true} user={user} setUser={setUser}/>
-      <CategoryNav selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} />
+    <div className="min-h-screen bg-[#FFF5E1]">
+      <Navbar
+        cart={cart}
+        setCart={setCart}
+        setselectedCategory={setselectedCategory}
+        showSearchLoginProfile={true}
+        user={user}
+        setUser={setUser}
+      />
+      <CategoryNav
+        selectedCategory={selectedCategory}
+        setselectedCategory={setselectedCategory}
+      />
 
       <div className="max-w-screen-xl mx-auto px-6 py-8">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">{category}</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-[#2D2D2D]">
+          {category}
+        </h1>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {filteredProducts.map((product) => {
             const inCart = cart.find((item) => item.id === product.id);
             return (
               <motion.div
                 key={product.id}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+                className="bg-[#FFEDD5] rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -77,31 +98,37 @@ const ProductGrid = ({ cart, setCart, selectedCategory, setselectedCategory,user
                   alt={product.name}
                 />
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold text-gray-800">{product.name}</h2>
-                  <div className="flex justify-between items-center mt-2">
-                    <span className="text-xl font-bold text-green-600">${product.price}</span>
+                  <h2 className="text-xl font-semibold text-[#2D2D2D]">
+                    {product.name}
+                  </h2>
+                  <div className="flex justify-between items-center mt-4">
+                    <span className="text-lg font-bold text-[#556B2F]">
+                      ${product.price}
+                    </span>
                   </div>
 
                   {inCart ? (
                     <div className="flex justify-between items-center mt-4">
                       <button
                         onClick={() => decrementQuantity(inCart.id)}
-                        className="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300 transition duration-200"
+                        className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md hover:bg-[#556B2F] hover:text-white"
                       >
                         -
                       </button>
-                      <span className="text-lg font-semibold">{inCart.quantity}</span>
+                      <span className="text-lg font-semibold">
+                        {inCart.quantity}
+                      </span>
                       <button
                         onClick={() => incrementQuantity(inCart.id)}
-                        className="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300 transition duration-200"
+                        className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md hover:bg-[#556B2F] hover:text-white"
                       >
                         +
                       </button>
                     </div>
                   ) : (
                     <button
-                      onClick={() => addToCart(product)} // Use addToCart function here
-                      className="mt-4 w-full px-4 py-2 bg-pink-600 text-white font-semibold rounded-md hover:bg-pink-700 transition duration-200"
+                      onClick={() => addToCart(product)}
+                      className="mt-4 w-full px-4 py-2 bg-[#556B2F] text-white font-semibold rounded-md hover:bg-[#4A5D3E] transition duration-200"
                     >
                       Add to Cart
                     </button>

@@ -108,17 +108,14 @@ export function Navbar({
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white border-b">
+      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#556B2F] to-[#6B8E23] text-white border-b">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-6">
             <motion.a
               href="/"
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               whileTap={{ scale: 0.95 }}
-              className="text-3xl font-logo font-semibold text-purple-600 
-              transition-transform 
-              bg-gradient-to-r from-purple-600 to-pink-500 
-              bg-clip-text text-transparent"
+              className="text-3xl font-logo font-semibold text-white transition-transform bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent"
             >
               K store
             </motion.a>
@@ -132,7 +129,7 @@ export function Navbar({
                   <Input
                     type="search"
                     placeholder="Search for categories..."
-                    className="w-full pl-10"
+                    className="w-full pl-10 bg-[#F4F4F4] text-black rounded-lg"
                     value={searchText}
                     onChange={(e) => {
                       const val = e.target.value;
@@ -162,7 +159,7 @@ export function Navbar({
                       {suggestions.map((cat, idx) => (
                         <li
                           key={idx}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-black"
                           onClick={() => {
                             setSearchText(cat.name);
                             setSuggestions([]);
@@ -267,20 +264,20 @@ export function Navbar({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 z-50 h-full w-96 bg-white shadow-lg border-l border-gray-200"
+            className="fixed top-0 right-0 z-50 h-full w-96 bg-[#F9F9F9] shadow-xl border-l border-gray-200"
           >
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-semibold">Your Cart</h2>
+            <div className="flex items-center justify-between p-4 border-b bg-[#F0F0F0]">
+              <h2 className="text-lg font-semibold text-gray-800">Your Cart</h2>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsCartOpen(false)}
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-gray-800" />
               </Button>
             </div>
 
-            <div className="p-4 overflow-y-auto max-h-[calc(100vh-140px)] space-y-4">
+            <div className="p-4 overflow-y-auto max-h-[calc(100vh-140px)] space-y-4 bg-[#F9F9F9]">
               {cart.length === 0 ? (
                 <div className="flex flex-col items-center justify-center text-center text-gray-500">
                   <img
@@ -288,14 +285,14 @@ export function Navbar({
                     alt="Cart is Empty"
                     className="w-32 h-32 object-cover mb-4"
                   />
-                  <p>Your cart is empty. Add some items!</p>
+                  <p className="text-xl">Your cart is empty. Add some items!</p>
                 </div>
               ) : (
                 <>
                   {cart.map((item, index) => (
                     <div
                       key={index}
-                      className="border rounded-lg p-3 flex gap-3"
+                      className="border rounded-lg p-4 flex gap-4 bg-white shadow-sm hover:shadow-md transition duration-200"
                     >
                       <img
                         src={item.image}
@@ -305,14 +302,14 @@ export function Navbar({
                       <div className="flex-1 flex flex-col justify-between">
                         <div className="flex justify-between">
                           <div>
-                            <span className="font-medium block text-sm">
+                            <span className="font-medium block text-sm text-gray-800">
                               {item.title}
                             </span>
                             <span className="text-xs text-gray-500">
                               {item.unit}
                             </span>
                           </div>
-                          <span className="text-sm text-gray-500">
+                          <span className="text-sm text-gray-600">
                             ${item.originalPrice?.toFixed(2)}
                           </span>
                         </div>
@@ -322,19 +319,23 @@ export function Navbar({
                               variant="outline"
                               size="icon"
                               onClick={() => handleDecrement(index)}
+                              className="bg-gray-200 text-gray-800 hover:bg-gray-300"
                             >
                               <Minus className="w-4 h-4" />
                             </Button>
-                            <span className="px-2">{item.quantity || 1}</span>
+                            <span className="px-2 text-lg font-semibold">
+                              {item.quantity || 1}
+                            </span>
                             <Button
                               variant="outline"
                               size="icon"
                               onClick={() => handleIncrement(index)}
+                              className="bg-gray-200 text-gray-800 hover:bg-gray-300"
                             >
                               <Plus className="w-4 h-4" />
                             </Button>
                           </div>
-                          <span className="text-sm text-gray-700">
+                          <span className="text-sm text-gray-800">
                             $
                             {(
                               item.originalPrice * (item.quantity || 1)
@@ -346,20 +347,23 @@ export function Navbar({
                   ))}
 
                   {/* Total */}
-                  <div className="p-4 border-t flex justify-between items-center">
-                    <span className="font-semibold text-lg">Total</span>
+                  <div className="p-4 border-t bg-white flex justify-between items-center shadow-sm">
+                    <span className="font-semibold text-lg text-gray-800">
+                      Total
+                    </span>
                     <span className="text-lg font-bold text-purple-600">
                       ${calculateTotal()}
                     </span>
                   </div>
 
                   {/* Buttons */}
-                  <div className="p-4 border-t flex justify-between items-center">
+                  <div className="p-4 border-t bg-white flex justify-between items-center">
                     <Button
                       variant="outline"
-                      style={{"color" : "black"}}
+                      style={{ color: "black" }}
                       onClick={handleClearCart}
                       disabled={cart.length === 0}
+                      className="bg-gray-200 text-gray-800 hover:bg-gray-300"
                     >
                       Clear Cart
                     </Button>
@@ -367,6 +371,7 @@ export function Navbar({
                     <Button
                       onClick={handleCheckout}
                       disabled={cart.length === 0}
+                      className="bg-purple-600 text-white hover:bg-purple-700"
                     >
                       Checkout
                     </Button>
@@ -384,30 +389,32 @@ export function Navbar({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 z-50 h-full w-96 bg-white shadow-lg p-4"
+            className="fixed top-0 right-0 z-50 h-full w-96 bg-[#F9F9F9] shadow-lg p-4"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">Choose Payment Method</h2>
+            <div className="flex items-center justify-between mb-4 bg-[#F0F0F0]">
+              <h2 className="text-lg font-semibold text-gray-800">
+                Choose Payment Method
+              </h2>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setShowCheckoutOptions(false)}
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-gray-800" />
               </Button>
             </div>
 
             <div className="space-y-4">
               <Button
                 variant="outline"
-                className="w-full"
+                className="w-full bg-gray-200 text-gray-800 hover:bg-gray-300"
                 onClick={() => alert("Pay Online selected")}
               >
                 Pay Online
               </Button>
               <Button
                 variant="outline"
-                className="w-full"
+                className="w-full bg-gray-200 text-gray-800 hover:bg-gray-300"
                 onClick={() => alert("Pay at Store selected")}
               >
                 Pay at Store
@@ -425,20 +432,22 @@ export function Navbar({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 z-50 h-full w-96 bg-white shadow-lg p-8"
+            className="fixed top-0 right-0 z-50 h-full w-96 bg-white shadow-lg rounded-l-lg p-8 bg-[#FFF5E1]"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">User Profile</h2>
+            <div className="flex items-center justify-between mb-4 border-b pb-4 ">
+              <h2 className="text-lg font-semibold text-gray-800">
+                User Profile
+              </h2>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={handleUserMenuToggle}
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-gray-800" />
               </Button>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div className="text-sm text-gray-700">
                 <strong>Name:</strong> {user.name}
               </div>
@@ -446,20 +455,26 @@ export function Navbar({
                 <strong>Email:</strong> {user.email}
               </div>
 
-              <Button variant="outline">Profile</Button>
-              <Button variant="outline">Previous Orders</Button>
+              <div className="space-y-4">
+                <Button variant="outline" className="w-full">
+                  Profile
+                </Button>
+                <Button variant="outline" className="w-full">
+                  Previous Orders
+                </Button>
 
-              <Button
-                variant="outline"
-                className="mt-4"
-                onClick={() => {
-                  setUser(null); // Unset the user, logging them out
-                  setIsUserMenuOpen(false); // Close the user menu
-                  setIsLoggedIn(false); // Set login state to false
-                }}
-              >
-                Logout
-              </Button>
+                <Button
+                  variant="outline"
+                  className="mt-4 w-full bg-red-500 text-white hover:bg-red-600"
+                  onClick={() => {
+                    setUser(null); // Unset the user, logging them out
+                    setIsUserMenuOpen(false); // Close the user menu
+                    setIsLoggedIn(false); // Set login state to false
+                  }}
+                >
+                  Logout
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
@@ -472,35 +487,49 @@ export function Navbar({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 z-50 h-full w-96 bg-white shadow-lg p-4"
+            className="fixed top-0 right-0 z-50 h-full w-96 bg-white shadow-lg rounded-l-lg p-6 bg-[#FFF5E1]"
           >
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">Login</h2>
+              <h2 className="text-lg font-semibold text-gray-800">Login</h2>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsLoginOpen(false)}
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-gray-800" />
               </Button>
             </div>
 
-            <div className="p-4 space-y-4 overflow-y-auto max-h-[calc(100vh-140px)]">
+            <div className="p-4 space-y-6 overflow-y-auto max-h-[calc(100vh-140px)] bg-[#F9F9F9] rounded-lg">
+              {/* Social Sign In */}
               <div className="flex items-center justify-center space-x-4 mb-4">
                 <p className="text-sm font-medium text-gray-600">
                   Sign in with
                 </p>
-                <Button variant="outline" size="icon">
-                  <Facebook className="h-4 w-4" />
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:bg-blue-500"
+                >
+                  <Facebook className="h-4 w-4 text-blue-600" />
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Twitter className="h-4 w-4" />
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:bg-blue-400"
+                >
+                  <Twitter className="h-4 w-4 text-blue-400" />
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Linkedin className="h-4 w-4" />
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:bg-blue-700"
+                >
+                  <Linkedin className="h-4 w-4 text-blue-700" />
                 </Button>
               </div>
 
+              {/* Divider */}
               <div className="relative flex items-center justify-center my-4">
                 <div className="border-t w-full"></div>
                 <span className="absolute bg-white px-4 text-sm text-gray-500">
@@ -508,8 +537,9 @@ export function Navbar({
                 </span>
               </div>
 
+              {/* Login Form */}
               <form
-                className="space-y-3"
+                className="space-y-4"
                 onSubmit={(e) => {
                   e.preventDefault();
                   const email = e.target.email.value;
@@ -518,25 +548,34 @@ export function Navbar({
                     setUser({ email });
                     setIsLoggedIn(true);
                     setIsLoginOpen(false);
-                    
                   } else {
                     alert("Invalid credentials. Try again.");
                   }
                 }}
               >
+                {/* Email Field */}
                 <div className="space-y-1">
                   <Label htmlFor="email">Email address</Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="you@example.com"
+                    className="p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
+
+                {/* Password Field */}
                 <div className="space-y-1">
                   <Label htmlFor="password">Password</Label>
-                  <Input id="password" type="password" placeholder="••••••••" />
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    className="p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
                 </div>
 
+                {/* Remember Me and Forgot Password */}
                 {login && (
                   <div className="flex justify-between items-center text-xs mt-2">
                     <div className="flex items-center space-x-2">
@@ -549,11 +588,16 @@ export function Navbar({
                   </div>
                 )}
 
-                <Button type="submit" className="w-full mt-4">
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  className="w-full mt-4 bg-blue-600 text-white hover:bg-blue-700"
+                >
                   {login ? "Login" : "Register"}
                 </Button>
               </form>
 
+              {/* Switch between Login and Register */}
               {login ? (
                 <p className="text-center text-xs text-gray-600 mt-4">
                   Don't have an account?{" "}
