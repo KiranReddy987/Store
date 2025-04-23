@@ -61,6 +61,7 @@ const Profile = ({ cart, setCart, setselectedCategory, user, setUser }) => {
   // Handle section click and navigate
   const handleSectionClick = (section) => {
     setActiveSection(section);
+    window.scrollTo(0, 0);
     navigate(`/profile?section=${section}`);
   };
 
