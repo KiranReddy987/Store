@@ -10,9 +10,11 @@ interface CategoryCardProps {
 }
 
 export function CategoryCard({ id, name, image, category, className }: CategoryCardProps) {
+  
   const navigate = useNavigate()
 
   const handleNavigate = () => {
+    window.scrollTo(0, 0);
     navigate(`/${name}`)
   }
 
