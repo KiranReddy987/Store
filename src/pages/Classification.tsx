@@ -188,7 +188,7 @@ const App = ({
                       <div className="flex justify-between items-center mt-4">
                         <button
                           onClick={() => decrementQuantity(inCart.id)}
-                          className="px-4 py-2 border border-[#556B2F] text-[#556B2F] text-white rounded-md hover:bg-[#556B2F] hover:text-white"
+                          className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md hover:bg-[#556B2F] hover:text-white"
                         >
                           -
                         </button>
@@ -197,7 +197,7 @@ const App = ({
                         </span>
                         <button
                           onClick={() => incrementQuantity(inCart.id)}
-                          className="px-4 py-2 border border-[#556B2F] text-[#556B2F] text-white rounded-md hover:bg-[#556B2F] hover:text-white"
+                          className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md hover:bg-[#556B2F] hover:text-white"
                         >
                           +
                         </button>

@@ -187,7 +187,7 @@ const Index = ({
                 .map((cat, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-xl p-6 bg-[#FFEDD0] cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="rounded-xl p-6 bg-[#FFEDD0] cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg"
                     onClick={() => {
                       window.scrollTo(0, 0);
                       navigate(`/${cat.name}`);
@@ -364,7 +364,7 @@ const Index = ({
                     return (
                       <div
                         key={index}
-                        className="bg-white rounded-2xl p-6 bg-[#FFEDD0] cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg flex flex-col items-center"
+                        className="rounded-2xl p-6 bg-[#FFEDD0] cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg flex flex-col items-center"
                       >
                         <img
                           src={item.image}
@@ -381,7 +381,7 @@ const Index = ({
                         {!isInCart ? (
                           <button
                             onClick={() => addToCart(item)}
-                            className="w-full text-[#556B2F] py-2 rounded-lg font-semibold text-white border border-[#556B2F]  hover:text-white hover:bg-[#4B5320] transition-all duration-200"
+                            className="w-full text-[#556B2F] py-2 rounded-lg font-semibold  border border-[#556B2F]  hover:text-white hover:bg-[#4B5320] transition-all duration-200"
                           >
                             Add to Cart
                           </button>
@@ -389,7 +389,7 @@ const Index = ({
                           <div className="w-full flex justify-between items-center gap-4">
                             <button
                               onClick={() => decrementQuantity(item.id)}
-                              className="px-4 py-2 bg-[#D2691E] rounded-full hover:bg-[#8B4513] transition-all"
+                              className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-full hover:bg-[#556B2F] hover:text-white transition-all"
                             >
                               -
                             </button>
@@ -401,7 +401,7 @@ const Index = ({
                             </span>
                             <button
                               onClick={() => incrementQuantity(item.id)}
-                              className="px-4 py-2 bg-[#D2691E] rounded-full hover:bg-[#8B4513] transition-all"
+                              className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-full hover:bg-[#556B2F] hover:text-white transition-all"
                             >
                               +
                             </button>
@@ -491,7 +491,7 @@ const Index = ({
             return (
               <motion.div
                 key={i}
-                className="bg-white rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300"
+                className="rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
