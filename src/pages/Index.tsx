@@ -512,25 +512,25 @@ const Index = ({
                 {/* Conditional rendering for buttons */}
                 {!isInCart ? (
                   <button
-                    className="mt-4 px-6 py-3 bg-[#556B2F] text-white rounded-lg hover:bg-[#4B5320] transition-all"
+                    className="mt-4 px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md w-full hover:bg-[#556B2F] hover:text-white transition-colors"
                     onClick={() => addToCart(combo)}
                   >
                     Add to Cart
                   </button>
                 ) : (
-                  <div className="mt-4 flex justify-center gap-4">
+                  <div className="mt-4 flex items-center justify-center gap-6">
                     <button
                       onClick={() => decrementQuantity(combo.id)}
-                      className="px-4 py-2 bg-[#D2691E] rounded-full hover:bg-[#8B4513] transition-all"
+                      className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md hover:bg-[#556B2F] hover:text-white transition-colors"
                     >
                       -
                     </button>
-                    <span className="text-lg font-semibold">
+                    <span className="text-lg font-semibold min-w-[32px] text-center">
                       {cart.find((item) => item.id === combo.id)?.quantity}
                     </span>
                     <button
                       onClick={() => incrementQuantity(combo.id)}
-                      className="px-4 py-2 bg-[#D2691E] rounded-full hover:bg-[#8B4513] transition-all"
+                      className="px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md hover:bg-[#556B2F] hover:text-white transition-colors"
                     >
                       +
                     </button>

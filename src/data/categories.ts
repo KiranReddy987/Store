@@ -41,51 +41,29 @@ export const categories = [
   { id: 40, name: "Backwoods (Russian)", price: 499, addedtoCart: false, image: "/images/Backwoods (Russian).png", subcategory: "Tobacco & Accessories", category: 2 },
   { id: 41, name: "Backwoods (Grape)", price: 499, addedtoCart: false, image: "/images/Backwoods (Grape) tobacco.png", subcategory: "Tobacco & Accessories", category: 2 },
   { id: 42, name: "Entourage Cigars", price: 599, addedtoCart: false, image: "/images/Entourage Cigars.png", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 43, name: "Swisher Sweets", price: 499, addedtoCart: false, image: "https://example.com/swisher-sweets.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 44, name: "Throwback Cigars", price: 549, addedtoCart: false, image: "https://example.com/throwback-cigars.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 45, name: "RAW Rolling Papers & Cones", price: 399, addedtoCart: false, image: "https://example.com/raw-rolling-papers.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 46, name: "Bob Marley Papers", price: 499, addedtoCart: false, image: "https://example.com/bob-marley-papers.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 47, name: "Black & Mild", price: 599, addedtoCart: false, image: "https://example.com/black-and-mild.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 48, name: "Cigarillos", price: 399, addedtoCart: false, image: "https://example.com/cigarillos.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 49, name: "Grinders", price: 799, addedtoCart: false, image: "https://example.com/grinders.jpg", subcategory: "Tobacco & Accessories", category: 2 },
-  { id: 50, name: "Lighters", price: 199, addedtoCart: false, image: "https://example.com/lighters.jpg", subcategory: "Tobacco & Accessories", category: 2 },
     { id: 128, name: "Newport Box (Shorts)", price: 1099, addedtoCart: false, image: "/images/smirnoff/Newport Box.png", subcategory: "Cigarettes", category: 2 },
     { id: 129, name: "Newport Menthol (100's)", price: 1099, addedtoCart: false, image: "/images/smirnoff/Newport Menthol.png", subcategory: "Cigarettes", category: 2 },
-    { id: 130, name: "Newport Gold Pack Menthol", price: 1099, addedtoCart: false, image: "", subcategory: "Cigarettes", category: 2 },
   
     // Marlboro
     { id: 131, name: "Marlboro Gold Pack", price: 1049, addedtoCart: false, image: "/images/smirnoff/Marlboro Gold Pack.png", subcategory: "Cigarettes", category: 2 },
     { id: 132, name: "Marlboro Menthol", price: 1049, addedtoCart: false, image: "/images/smirnoff/Marlboro Menthol.png", subcategory: "Cigarettes", category: 2 },
     { id: 133, name: "Marlboro Red Label", price: 1049, addedtoCart: false, image: "/images/smirnoff/Marlboro Red Label.png", subcategory: "Cigarettes", category: 2 },
-    { id: 134, name: "Marlboro Silver", price: 1049, addedtoCart: false, image: "", subcategory: "Cigarettes", category: 2 },
-    { id: 135, name: "Marlboro 72 Gold", price: 1049, addedtoCart: false, image: "", subcategory: "Cigarettes", category: 2 },
-    { id: 136, name: "Marlboro 72 Silver", price: 1049, addedtoCart: false, image: "", subcategory: "Cigarettes", category: 2 },
-    { id: 137, name: "Marlboro 72 Red", price: 1049, addedtoCart: false, image: "", subcategory: "Cigarettes", category: 2 },
       { id: 109, name: "Budweiser", price: 899, addedtoCart: false, image: "/images/smirnoff/Budweiser.png", subcategory: "Domestic Beers", category: 3 },
       { id: 110, name: "Bud Light", price: 899, addedtoCart: false, image: "/images/smirnoff/bud light.png", subcategory: "Domestic Beers", category: 3 },
       { id: 111, name: "Coors Light", price: 899, addedtoCart: false, image: "/images/smirnoff/coors light.png", subcategory: "Domestic Beers", category: 3 },
       { id: 112, name: "Miller Lite", price: 899, addedtoCart: false, image: "/images/smirnoff/miller light.png", subcategory: "Domestic Beers", category: 3 },
-      { id: 113, name: "Michelob Ultra", price: 899, addedtoCart: false, image: "", subcategory: "Domestic Beers", category: 3 },
-    
-      // Imported Beers
       { id: 114, name: "Heineken", price: 999, addedtoCart: false, image: "/images/smirnoff/heineken.png", subcategory: "Imported Beers", category: 3 },
       { id: 115, name: "Corona Extra", price: 999, addedtoCart: false, image: "/images/smirnoff/corona extra.png", subcategory: "Imported Beers", category: 3 },
       { id: 116, name: "Stella Artois", price: 999, addedtoCart: false, image: "/images/smirnoff/stella artois.png", subcategory: "Imported Beers", category: 3 },
       { id: 117, name: "Guinness", price: 999, addedtoCart: false, image: "/images/smirnoff/guinness.png", subcategory: "Imported Beers", category: 3 },
-      { id: 118, name: "Modelo Especial", price: 999, addedtoCart: false, image: "", subcategory: "Imported Beers", category: 3 },
-      { id: 119, name: "Modelo Negra", price: 999, addedtoCart: false, image: "", subcategory: "Imported Beers", category: 3 },
-    
-      // Wine Coolers
       { id: 120, name: "Smirnoff Ice", price: 649, addedtoCart: false, image: "/images/smirnoff/smirnoff.png", subcategory: "Wine Coolers", category: 3 },
       { id: 121, name: "Mike’s Hard Lemonade", price: 649, addedtoCart: false, image: "/images/smirnoff/Mike's hard lemonade.png", subcategory: "Wine Coolers", category: 3 },
-      { id: 122, name: "Seagram’s Escapes", price: 649, addedtoCart: false, image: "", subcategory: "Wine Coolers", category: 3 },
-      { id: 123, name: "Bartles & Jaymes", price: 649, addedtoCart: false, image: "", subcategory: "Wine Coolers", category: 3 },
     
       // Hard Seltzers
       { id: 124, name: "White Claw", price: 699, addedtoCart: false, image: "/images/smirnoff/White Claw.jpg", subcategory: "Hard Seltzers", category: 3 },
       { id: 125, name: "Truly", price: 699, addedtoCart: false, image: "/images/smirnoff/Truly.jpg", subcategory: "Hard Seltzers", category: 3 },
-      { id: 126, name: "High Noon", price: 699, addedtoCart: false, image: "/smirnoff/High Noon.jpg", subcategory: "Hard Seltzers", category: 3 },
-      { id: 127, name: "Bud Light Seltzer", price: 699, addedtoCart: false, image: "public/images/smirnoff/bud light.png", subcategory: "Hard Seltzers", category: 3 },
+      { id: 126, name: "High Noon", price: 699, addedtoCart: false, image: "/images/smirnoff/High Noon.jpg", subcategory: "Hard Seltzers", category: 3 },
+      { id: 127, name: "Bud Light Seltzer", price: 699, addedtoCart: false, image: "/images/smirnoff/bud light.png", subcategory: "Hard Seltzers", category: 3 },
         { id: 95, name: "Chips", price: 249, addedtoCart: false, image: "/images/CHIPS .png", subcategory: "Snacks & Candy", category: 4 },
         { id: 96, name: "Chocolate Bars", price: 149, addedtoCart: false, image: "/images/choc bars .png", subcategory: "Snacks & Candy", category: 4 },
         { id: 97, name: "Candy", price: 129, addedtoCart: false, image: "/images/candy .png", subcategory: "Snacks & Candy", category: 4 },
@@ -103,41 +81,22 @@ export const categories = [
         // Frozen Foods
         { id: 106, name: "Ice Cream", price: 349, addedtoCart: false, image: "/images/ice cream .png", subcategory: "Frozen Foods", category: 4 },
         { id: 107, name: "Frozen Pizza", price: 599, addedtoCart: false, image: "/images/93e601e4-d6aa-428e-89b3-e58f4a68d0b6.png", subcategory: "Frozen Foods", category: 4 },
-        { id: 108, name: "Frozen Meals", price: 499, addedtoCart: false, image: "", subcategory: "Frozen Foods", category: 4 },
+
+
           // Grocery Essentials
           { id: 138, name: "Milk", price: 199, addedtoCart: false, image: "/images/milk .png", subcategory: "Grocery Essentials", category: 5 },
-          { id: 139, name: "Bread", price: 179, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
           { id: 140, name: "Eggs", price: 249, addedtoCart: false, image: "/images/eggs.png", subcategory: "Grocery Essentials", category: 5 },
-          { id: 141, name: "Cereal", price: 349, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-          { id: 142, name: "Cooking Oil", price: 199, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-          { id: 143, name: "Sugar / Flour", price: 159, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
           { id: 144, name: "Salt & Pepper", price: 99, addedtoCart: false, image: "/images/salt and pepper .png", subcategory: "Grocery Essentials", category: 5 },
-          { id: 145, name: "Canned Soup", price: 189, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-          { id: 146, name: "Pasta & Rice", price: 219, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-          { id: 147, name: "Peanut Butter / Jelly", price: 199, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-          { id: 148, name: "Snacks (Crackers, Nuts)", price: 299, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-          { id: 149, name: "Condiments (Ketchup, Mustard, Mayo)", price: 149, addedtoCart: false, image: "/images/ketchups .png", subcategory: "Grocery Essentials", category: 5 },
-          { id: 150, name: "Instant Noodles", price: 89, addedtoCart: false, image: "", subcategory: "Grocery Essentials", category: 5 },
-        
+
           // Household & Personal Care
-          { id: 151, name: "Toothpaste", price: 129, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
-          { id: 152, name: "Toothbrushes", price: 99, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
           { id: 153, name: "Soap & Shampoo", price: 199, addedtoCart: false, image: "/images/home care .png", subcategory: "Household & Personal Care", category: 5 },
-          { id: 154, name: "Nail Clippers", price: 89, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
           { id: 155, name: "Toilet Paper", price: 179, addedtoCart: false, image: "/images/tissues .png", subcategory: "Household & Personal Care", category: 5 },
-          { id: 156, name: "Paper Towels", price: 189, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
-          { id: 157, name: "Cleaning Products", price: 249, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
-          { id: 158, name: "Hand Sanitizer", price: 149, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
-          { id: 159, name: "Lotion", price: 179, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
           { id: 160, name: "Deodorant", price: 199, addedtoCart: false, image: "/images/duoir.png", subcategory: "Household & Personal Care", category: 5 },
           { id: 161, name: "Feminine Products", price: 249, addedtoCart: false, image: "/images/feminine .png", subcategory: "Household & Personal Care", category: 5 },
-          { id: 162, name: "Disposable Razors", price: 149, addedtoCart: false, image: "", subcategory: "Household & Personal Care", category: 5 },
         
           // Pet Care
           { id: 163, name: "Pet Food (Dry & Wet)", price: 499, addedtoCart: false, image: "/images/pet food .png", subcategory: "Pet Care", category: 5 },
-          { id: 164, name: "Treats", price: 299, addedtoCart: false, image: "", subcategory: "Pet Care", category: 5 },
           { id: 165, name: "Waste Bags", price: 149, addedtoCart: false, image: "/images/pet covers .png", subcategory: "Pet Care", category: 5 },
-          { id: 166, name: "Cat Litter", price: 499, addedtoCart: false, image: "", subcategory: "Pet Care", category: 5 },
           { id: 167, name: "Pet Shampoo", price: 199, addedtoCart: false, image: "/images/sampoo.png", subcategory: "Pet Care", category: 5 }
 
 ];
