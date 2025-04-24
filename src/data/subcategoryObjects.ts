@@ -8,7 +8,7 @@ export const subcategories = [
   { id: 8, name: "Tobacco & Accessories", image: "/images/57f3dcb8-01fc-41b0-8094-d06f74413c01.png", category: 2 },
   { id: 9, name: "Domestic Beers", image: "/images/cf98f2c7-2bfb-4aed-995c-bc1a0d47a829.png", category: 3 },
   { id: 10, name: "Imported Beers", image: "/images/6add1a34-d7fc-4e62-9c03-858dc127c1c2.png", category: 3 },
-  { id: 11, name: "Wine Coolers", image: "public/images/893ed2d0-8e18-4df1-bdfd-7eb0f0c89eb9.png", category: 3 },
+  { id: 11, name: "Wine Coolers", image: "/images/893ed2d0-8e18-4df1-bdfd-7eb0f0c89eb9.png", category: 3 },
   { id: 12, name: "Hard Seltzers", image: "/images/125648bb-2ce3-49c2-b518-abc9c820bfe3.png", category: 3 },
   { id: 13, name: "Snacks & Candy", image: "/images/6d0b1f05-4363-4df9-87df-db12288c21c6.png", category: 4 },
   { id: 14, name: "Beverages", image: "/images/31b8dd14-8541-4aa8-a7d1-ec90306c4839.png", category: 4 },
