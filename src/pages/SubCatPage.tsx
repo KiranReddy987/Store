@@ -128,7 +128,7 @@ const ProductGrid = ({
                   ) : (
                     <button
                       onClick={() => addToCart(product)}
-                      className="mt-4 w-full px-4 py-2 bg-[#556B2F] text-white font-semibold rounded-md hover:bg-[#4A5D3E] transition duration-200"
+                      className="mt-4 w-full px-4 py-2 bg-[#556B2F] text-white font-semibold rounded-md hover:bg-[#4B5320] transition duration-200"
                     >
                       Add to Cart
                     </button>

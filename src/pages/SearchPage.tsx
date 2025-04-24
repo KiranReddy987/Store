@@ -107,7 +107,7 @@ const SearchPage = ({ cart, setCart, selectedCategory, setselectedCategory,user,
                   ) : (
                     <button
                       onClick={() => addToCart(product)}
-                      className="mt-4 px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md w-full hover:bg-[#556B2F] hover:text-white"
+                      className="mt-4 px-4 py-2 bg-[#556B2F] text-white rounded-md w-full hover:bg-[#4B5320] hover:text-white"
                       >
                       Add to Cart
                     </button>

@@ -252,6 +252,8 @@ const Index = ({
                   className="w-16 h-16 object-contain"
                 />
               </div>
+              <div>
+              </div>
               <button
                 onClick={() => moveToCategory(2)}
                 className="bg-[#FFC145] text-black px-6 py-3 font-bold rounded-lg hover:bg-[#FF6B35] transition"
@@ -262,6 +264,7 @@ const Index = ({
           </div>
         </motion.main>
       </section>
+
 
       {/* hidden gems */}
       <div className="bg-gradient-to-r from-[#FFF5E1] to-[#FFEDD5]">
@@ -381,7 +384,7 @@ const Index = ({
                         {!isInCart ? (
                           <button
                             onClick={() => addToCart(item)}
-                            className="w-full text-[#556B2F] py-2 rounded-lg font-semibold  border border-[#556B2F]  hover:text-white hover:bg-[#4B5320] transition-all duration-200"
+                            className="w-full text-white py-2 rounded-lg font-semibold  bg-[#556B2F]  hover:bg-[#4B5320] transition-all duration-200"
                           >
                             Add to Cart
                           </button>
@@ -434,8 +437,8 @@ const Index = ({
               />
               <div className="absolute inset-0 opacity-50"></div>
               <div className="absolute bottom-12 left-8 text-white">
-                <h2 className="text-4xl font-bold">Premium Beverages</h2>
-                <p className="mt-2 text-lg">
+                <h2 className="text-4xl text-[black] font-bold">Premium Beverages</h2>
+                <p className="mt-2 text-lg text-black ">
                   Explore our selection of fresh Beverages
                 </p>
                 <button
@@ -512,7 +515,7 @@ const Index = ({
                 {/* Conditional rendering for buttons */}
                 {!isInCart ? (
                   <button
-                    className="mt-4 px-4 py-2 border border-[#556B2F] text-[#556B2F] rounded-md w-full hover:bg-[#556B2F] hover:text-white transition-colors"
+                    className="mt-4 px-4 py-2 bg-[#556B2F] text-white rounded-md w-full hover:bg-[#4B5320]  transition-colors"
                     onClick={() => addToCart(combo)}
                   >
                     Add to Cart
